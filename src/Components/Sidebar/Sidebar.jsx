@@ -9,13 +9,13 @@ function Sidebar() {
         <Link to={'/addproperty'} style={{textDecoration:"none"}}>
             <div className="sidebar-item">
                 <img src={add_product_icon} alt="" />
-                <p>Add Product</p>
+                <p>Add Property</p>
             </div>
         </Link>
         <Link to={'/listproperty'} style={{textDecoration:"none"}}>
             <div className="sidebar-item">
                 <img src={list_product_icon} alt="" />
-                <p>Product List</p>
+                <p>Property List</p>
             </div>
         </Link>
     </div>
