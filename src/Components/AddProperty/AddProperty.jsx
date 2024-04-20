@@ -1,5 +1,6 @@
-import { response } from 'express'
 import { useState } from 'react'
+import './AddProduct.css'
+import upload_area from '../../assets/upload_area.svg'
 
 function AddProperty() {
     const [image, setImage] = useState(false)
@@ -47,12 +48,12 @@ function AddProperty() {
         }
     }
 
-    const addProduct = async () => {
+    const addProperty = async () => {
         let responseData;
         let property = propertyDetails
         let formData = new FormData()
         formData.append('property', image)
-        formData.append('property', urlImages)
+        formData.append('property', image)
         try{
             await fetch('https://galstate-api-db8c5d80bbe4.herokuapp.com/uploadimage',{
                 method:'POST',
@@ -132,7 +133,13 @@ function AddProperty() {
                 </label>
                 <input type="file" name='image' id='file-input' onChange={imageHandler} hidden/>
             </div>
-            <button onClick={() => {AddProperty()}} className="addproduct-btn">ADD</button>
+            <div>
+                <label htmlFor="">
+                    <img src={images ? URL.createObjectURL(images):upload_area} alt="" className='addproduct-thumbnail-img'/>
+                </label>
+                <input type="files" name='image' id='file-input' onChange={arrImagesHandler} hidden/>
+            </div>
+            <button onClick={() => {addProperty()}} className="addproduct-btn">ADD</button>
         </div>
     )
 }
