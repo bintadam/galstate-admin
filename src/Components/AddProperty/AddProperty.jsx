@@ -20,6 +20,27 @@ function AddProperty() {
     const imageHandler = (e) => {
         setImage(e.target.files[0])
     }
+
+    const changeHandler = (e) => {
+        const {name, value} = e.target
+        if(name === 'category'){
+            const updates = {
+                isBuy:'false',
+                isRent:'false'
+            }
+
+            updates[value] = 'true'
+            setPropertyDetails(prevState => ({
+                ...prevState,
+                category:{...updates}
+            }))
+        } else {
+            setPropertyDetails(prevState => ({
+                ...prevState,
+                [name]:value
+            }))
+        }
+    }
     return (
         <div>
 
