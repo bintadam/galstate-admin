@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './AddProduct.css'
+import './AddProperty.css'
 import upload_area from '../../assets/upload_area.svg'
 
 function AddProperty() {

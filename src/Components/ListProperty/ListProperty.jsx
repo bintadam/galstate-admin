@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import './ListProduct.css'
+import './ListProperty.css'
 
 function ListProperty() {
     const [allproperties, setAllProperties] = useState([])
